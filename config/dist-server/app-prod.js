@@ -16,12 +16,13 @@ app.use('/api/*', apiProxy)
 // app.use('/admin/*',apiProxy)
 // app.use('*.xls',apiProxy)
 // app.use(express.static('assets'))
-app.use('/', express.static(path.join(__dirname, '')))
-app.use('/assets', express.static(path.join(__dirname, 'assets')))
+// app.use('/', express.static(path.join(__dirname, '')))
+app.use('/static', express.static(path.join(__dirname, 'static')))
 
 app.use(function (req, res) {
   // Use res.sendfile, as it streams instead of reading the file into memory.
-  res.sendfile(__dirname + '/index.html')
+  // res.sendfile(__dirname + '/index.html')
+  res.sendfile(path.join(__dirname, 'index.html'))
 })
 
 app.listen(port)
