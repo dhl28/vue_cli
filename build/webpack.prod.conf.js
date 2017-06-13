@@ -1,4 +1,5 @@
 var path = require('path')
+var helpers = require('./helpers')
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -8,6 +9,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var TransferWebpackPlugin = require('transfer-webpack-plugin')
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -31,6 +33,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
+    //把指定文件夹下的文件复制到指定的目录
+    new TransferWebpackPlugin([
+      {from:helpers.root('config/dist-server')}
+    ], helpers.root('dist')),
+
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
