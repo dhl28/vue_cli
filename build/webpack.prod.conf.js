@@ -25,7 +25,8 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
+    // filename: utils.assetsPath('js/[name].[chunkhash].js'),
+    filename: utils.assetsPath('js/[name].js?[chunkhash]'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
@@ -35,8 +36,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     //把指定文件夹下的文件复制到指定的目录
     new TransferWebpackPlugin([
-      {from:helpers.root('config/dist-server')}
-    ], helpers.root('dist')),
+      {from:helpers.root('config/dist-server')},
+      {from:helpers.root('static'),to:'static'},
+    ] ,helpers.root('dist')),
 
     new webpack.optimize.UglifyJsPlugin({
       compress: {
