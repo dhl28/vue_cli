@@ -15,7 +15,7 @@ Created by douhongliang on 2017/6/27.
     </div>
 
     <div class="form-group">
-      <button type="button" class="btn btn-next">>>继续</button>
+      <button type="button" class="btn btn-next" @click="toStep2()">>>继续</button>
     </div>
 
   </div>
@@ -23,10 +23,16 @@ Created by douhongliang on 2017/6/27.
 
 <script>
   export default {
-    name: 'providerRegister',
+    name: 'providerRegisterStep1',
     data () {
       return {
         msg: '饭主注册'
+      }
+    },
+    methods: {
+      toStep2: function () {
+        console.log(this.$route)
+        this.$router.push({name: 'ProviderRegisterStep2'})
       }
     }
   }
@@ -34,7 +40,7 @@ Created by douhongliang on 2017/6/27.
 
 <style scoped>
   .content{
-    margin: 0.6rem;
+    padding: 0.6rem;
   }
   .form-group{
     margin-top: 0.3rem;

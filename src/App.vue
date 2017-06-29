@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-link to="/">返回首页</router-link>
-    <router-link to="/providerRegister">饭主注册</router-link>
+    <router-link to="/providerRegister/1">饭主注册</router-link>
     <router-view></router-view>
   </div>
 </template>
