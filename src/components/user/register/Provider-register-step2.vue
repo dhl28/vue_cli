@@ -64,7 +64,7 @@ Created by douhongliang on 2017/6/27.
             <option>小区2</option>
             <option>小区3</option>
           </select>
-          <button type="button" class="btn-location">定位</button>
+          <button type="button" class="btn btn-location">定位</button>
         </div>
         <div class="location-detail">
           <input class="form-control" type="text" placeholder="具体到门牌号">
