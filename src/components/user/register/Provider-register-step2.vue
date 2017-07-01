@@ -102,6 +102,9 @@ Created by douhongliang on 2017/6/27.
     name: 'providerRegisterStep2',
     data () {
       return {}
+    },
+    mounted () {
+      this.setDocumentTitle('完善必要资料')
     }
   }
 </script>

@@ -6,6 +6,9 @@ import router from './router'
 // import './assets/bootstrap-3.3.7/css/bootstrap.min.css'
 // import './assets/bootstrap-3.3.7/js/bootstrap.min'
 
+import util from './common/util'
+Vue.use(util)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -34,18 +34,23 @@ Created by douhongliang on 2017/6/27.
         console.log(this.$route)
         this.$router.push({name: 'ProviderRegisterStep2'})
       }
+    },
+    mounted () {
+      this.setDocumentTitle('饭主注册')
     }
   }
 </script>
 
 <style scoped>
-  .content{
-    padding: 0.6rem;
+  .content {
+    padding: 0.6rem 1.2rem;
   }
-  .form-group{
+
+  .form-group {
     margin-top: 0.3rem;
   }
-  .form-control{
+
+  .form-control {
     display: block;
     width: 5rem;
     height: 0.4533333333333333rem;
@@ -57,7 +62,8 @@ Created by douhongliang on 2017/6/27.
     border: 0.013333333333333334rem solid #ccc;
     border-radius: 0.1333rem;
   }
-  .btn{
+
+  .btn {
     display: inline-block;
     padding: 0.08rem 0.16rem;
     margin-bottom: 0;
@@ -78,6 +84,7 @@ Created by douhongliang on 2017/6/27.
     border: 1px solid transparent;
     border-radius: 0.1333rem;
   }
+
   [data-dpr="2"] .btn {
     font-size: 24px;
   }
@@ -85,16 +92,19 @@ Created by douhongliang on 2017/6/27.
   [data-dpr="3"] .btn {
     font-size: 36px;
   }
+
   .btn-next {
     margin-top: 0.6rem;
     background-color: #ff7043;
     padding: 0.1rem 0.4rem;
     color: #ffffff;
   }
-  .control-phone{
+
+  .control-phone {
     position: relative;
   }
-  .btn-get-code{
+
+  .btn-get-code {
     display: inline-block;
     color: #ffffff;
     background-color: #78909c;
